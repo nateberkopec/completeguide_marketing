@@ -6,6 +6,10 @@
   html
     font-size: 50.0%
 
+img
+  max-width: 100%
+  height: initial
+
 // text transforms
 
 .text-upcase
@@ -13,9 +17,6 @@
 
 .text-center
   text-align: center
-
-.text-right
-  text-align: right
 
 .text-large
   font-size: 2.4rem
@@ -37,13 +38,16 @@
   margin: 0
 
 .margin-sm
-  margin: 3rem 0
+  margin-top: 3rem
+  margin-bottom: 3rem
 
 .margin-md
-  margin: 6rem 0
+  margin-top: 6rem
+  margin-bottom: 6rem
 
 .padding-x-md
-  padding: 0 2rem
+  padding-right: 2em
+  padding-left: 2em
 
 .padding-md
   padding: 2rem
@@ -54,14 +58,6 @@
 .padding-y-lg
   padding-top: 4em
   padding-bottom: 4em
-
-.padding-y-xl
-  padding-top: 8em
-  padding-bottom: 8em
-
-  @media (max-width: 40.0rem)
-    padding-top: 4em
-    padding-bottom: 4em
 
 // other generics
 
@@ -109,18 +105,13 @@ h4
 // specific content sections
 
 .hero
+  overflow: hidden
+
   h1
     margin-bottom: 8rem
 
     @media (max-width: 40.0rem)
       margin-bottom: 4rem
-
-  img
-    height: 30rem
-
-@media (max-width: 40.0rem)
-  #purchase
-    width: 100%
 
 .icon-list
   padding: 4rem 0
@@ -130,12 +121,6 @@ h4
 
     p
       font-size: 1.6rem
-
-.main-copy
-  margin: 4rem 0
-
-  .meta-p
-    margin-bottom: 5rem
 
 .pull-quote
   background: $color-quaternary
@@ -156,7 +141,7 @@ h4
     font-size: 6rem
 
   .white-box
-    padding: 2rem
+    padding: 2em
 
   p
     font-size: .8em
@@ -171,5 +156,4 @@ video#bgvid
   left: -5%
   min-height: 100%
   min-width: 105%
-  width: auto
   z-index: 0
