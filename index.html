@@ -1,0 +1,837 @@
+---
+layout: default
+---
+
+<div class="hero blue-box" style="position:relative">
+  <video autoplay loop id="bgvid">
+    <source src="video/train.webm" type="video/webm">
+    <source src="video/train.mp4" type="video/mp4">
+  </video>
+  <div class="container padding-y-xl" style="z-index: 1000">
+    <div class="row">
+      <div class="column">
+        <h1 class="text-upcase text-center">Make your Rails app faster than a speeding train!</h1>
+      </div>
+    </div>
+
+    <div class="row visible-sm text-center">
+      <div class="column">
+        <p><img src="img/cover-md.jpg"></img></p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="column column-60">
+        <p class="text-large">
+          <b>Learn how to transform your snail-paced Rails app into a sub-100 millisecond powerhouse.</b>
+        </p>
+
+        <p class="text-large">
+          The Complete Guide to Rails Performance teaches you how to make Ruby
+          on Rails applications
+          <b>faster</b>, more <b>scalable</b>, and <b>easier to maintain</b>.
+        </p>
+
+        <script src="https://gumroad.com/js/gumroad.js"></script>
+        <button class="gumroad-button" href="https://gum.co/ukGR?wanted=true" data-gumroad-single-product="true">Buy now</a>
+      </div>
+      <div class="column column-40 text-center visible-md visible-lg">
+        <img src="img/cover-md.jpg"></img>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container padding-y-xl">
+  <div class="row margin-sm">
+    <div class="column column-70">
+      <h3 class="red-underline">Performance is hard.</h3>
+
+      <div class="meta-p">
+        <h4>Why are some (even most) production Rails applications extremely slow?</h4>
+        <p>They didn't start that way. Your app started as a lean, mean web machine.</p>
+      </div>
+
+      <div class="meta-p">
+        <h4>When did pages start taking 5 seconds to load?</h4>
+        <p>Searches bog down, your caches are bursting at the seams, and your server is constantly out of memory.</p>
+      </div>
+    </div>
+    <div class="column column-30 col-center">
+      <img src="img/lost.gif"></img>
+    </div>
+  </div>
+  <div class="row margin-sm">
+    <div class="column column-30 col-center">
+      <img src="img/fire.gif"></img>
+    </div>
+    <div class="column column-70">
+      <div class="meta-p">
+        <h4>Where did it all go wrong?</h4>
+        <p>
+          Hacker News will tell you it's because Ruby is fatally flawed.
+          It's a slow language, doomed to failure in a land of Go, Javascript, Erlang and others.
+          That’s BS.
+        </p>
+        <p>
+          Look at Shopify, Github and Basecamp - all Rails applications in the top
+          1000 in the world, according to Alexa. How do these Rails applications
+          achieve sub-100 millisecond response times at massive (dare I say, Web™) Scale?
+        </p>
+      </div>
+    </div>
+
+  </div>
+  <div class="row margin-sm">
+    <div class="column column-70">
+      <h4>Why is this so difficult? Is DHH sacrificing chickens in his backyard?</h4>
+      <p>
+        The secret is that Rails apps aren't slow by default - they die a slow
+        death by a thousand papercuts. This course is about each one of those thousand papercuts.
+      </p>
+      <p>
+        But you don't have a team of 30 or more experienced programmers, like
+        Shopify, Github and Basecamp do. And let's be real - you're not DHH.
+        Maybe you're a startup CTO with a business to run - you can't spend hundreds
+        of hours tracking down performance bugs.
+      </p>
+    </div>
+    <div class="column column-30 col-center">
+      <img style="width: 100%" src="img/pokemon.gif"></img>
+    </div>
+  </div>
+  <div class="row margin-sm">
+
+    <div class="column column-70 column-offset-15">
+
+      <h4>I just need someone to tell me what to do!</h4>
+
+      <p>
+        Maybe you've got a side project that's suffering under new growth and server load.
+      </p>
+      <p>
+        Maybe you're a bigger dev shop but you're looking for ways to train up
+        your team on the latest performance techniques.
+      </p>
+      <p>
+        You just want someone to tell you what the problem areas are and how to fix them.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="pull-quote">
+  <div class="container">
+    Almost every Rails application suffers from the same performance problems.
+    This guide is about identifying and solving those problems.
+  </div>
+</div>
+
+<div class="container padding-y-xl">
+  <div class="row">
+    <div class="column column-70 column-offset-15">
+      <h2>Introducing:<br> The Complete Guide to Rails Performance</h2>
+
+      <p>
+        My name is Nate Berkopec. I'm a Rails developer.
+      </p>
+
+      <p>
+        Over the past 4 years, I've seen dozens of different Rails codebases. Many were for well-funded startups, from Ivy-League incubators like YCombinator or 500Startups. Others were the passion projects of developers looking to start a side business.
+      </p>
+
+      <p>
+        But I've never met a Rails application that couldn't be faster.
+      </p>
+
+      <h4>What do I consider fast?</h4>
+
+      <p>What do I consider to be a "fast" Rails application? Here's some numbers.</p>
+
+      <table>
+        <tr>
+          <th>App server average response time</th>
+          <th>Status</th>
+        </tr>
+        <tr>
+          <td> < 50ms</td>
+          <td>Fast!</td>
+        </tr>
+        <tr>
+          <td> < 300ms</td>
+          <td>Average</td>
+        </tr>
+        <tr>
+          <td> >= 300ms</td>
+          <td>Slow!</td>
+        </tr>
+      </table>
+
+      <p>
+        Of course, those numbers are just rules of thumb for Rails applications
+        that serve up HTML - your typical "Basecamp-style" application.
+        For simple API servers that serve JSON only, I might divide by 2, for example.
+      </p>
+
+      <p>And for the frontend, here's what I'd expect to see:</p>
+
+      <table>
+        <tr>
+          <th>Browser load time</th>
+          <th>Status</th>
+        </tr>
+        <tr>
+          <td> < 500ms</td>
+          <td>Fast!</td>
+        </tr>
+        <tr>
+          <td> < 2 seconds</td>
+          <td>Average</td>
+        </tr>
+        <tr>
+          <td> > 2 seconds</td>
+          <td>Slow!</td>
+        </tr>
+      </table>
+
+      <p>
+        These are the numbers I'd expect to see in Google Analytic's Site Speed
+        Tool or New Relic's Browser analytics. This is *not* the load times I'd
+        expect from checking your site load in your local browser - most people's
+        machines and internet connections are slower than your average developer's!
+      </p>
+
+      <p>
+        If you're in the "GOOD" region of these numbers, well, congrats - this
+        course won't help you. But if you're in the "AVERAGE" to "BAD" group,
+        well, then I think have some things I can teach you.
+      </p>
+
+      <h4>Performance is hard. Let me help you.</h4>
+
+      <p>
+        Performance isn't easy. Delivering an HTML response to the browser actually involves hundreds of technologies and levels of the stack.
+      </p>
+
+      <p>
+        Any of these levels or stacks can go wrong, causing a slowdown in your application:
+      </p>
+
+      <div class="mini-list padding-md row row-wrap">
+        <div class="column column-50">
+          <div class="icon-list-item">
+            <h4>Front-end</h4>
+            <span>HTML, CSS and JavaScript, rendering quirks and browser preloaders.</span>
+          </div>
+        </div>
+        <div class="column column-50">
+          <div class="icon-list-item">
+            <h4>Network</h4>
+            <span>SSL/TLS, HTTP, HTTP/2, TCP, WebSockets.</span>
+          </div>
+        </div>
+        <div class="column column-50">
+          <div class="icon-list-item">
+            <h4>Ruby</h4>
+            <span>Rails, the numerous gems you use in your application, and your runtime.</span>
+          </div>
+        </div>
+        <div class="column column-50">
+          <div class="icon-list-item">
+            <h4>Server</h4>
+            <span>Ever considered how your memory allocator may be affecting your performance?</span>
+          </div>
+        </div>
+      </div>
+
+      <p>
+        This makes performance optimization something like looking for a needle in a haystack - any one of a thousand things could be the bottleneck for your application. Where do you even start?
+      </p>
+
+      <p>
+        Worse, no full-stack developer that has to write code for a living can keep on top of all of these developments at once. No one has ever written a guide for optimizing Rails applications that covers the entire stack.
+      </p>
+
+      <p>
+        Wouldn't it be amazing if you could look over the shoulder of an experienced, full-stack Rails developer and watch as they diagnose and solve the performance problems of one of the most popular Rails applications in the world?
+      </p>
+
+      <p>
+        That's exactly what I've done.
+      </p>
+
+      <h2 class="margin-md">WATCH ME OPTIMIZE PRODUCTION RAILS APPS AND APPLY THE LESSONS BACK TO YOUR OWN SITE.</h2>
+
+      <p>I’ve created what is basically an enormous checklist for speeding up Rails applications:</p>
+
+      <ul>
+        <li>Implemented 34 strategies that have been tested by more than 1 million unique visitors.</li>
+        <li>Identified the 4 strategies that account for the most performance impact. These strategies have solved 80% of performance problems in most applications.</li>
+        <li>Used more than 20 different SaaS providers, performance-oriented Rubygems, backend service providers and more and found the perfect technical stack to make the entire performance optimization process simple (even if you’re a new developer or someone with a deep technical background).</li>
+      </ul>
+
+      <p>
+        These strategies have been tested and proven. But not just on my client’s sites.
+      </p>
+
+      <p>
+        While preparing this course, I’ve implemented each of my performance
+        strategies on production websites like rubygems.org, sidekiq.org, the official
+        Ruby website, and more.
+      </p>
+
+      <h4>Look over my shoulder while I work</h4>
+
+      <p>
+        You’ll get to watch, through screencasts and video lessons, exacty how
+        (and more importantly, why) I optimized these real-world production websites.
+      </p>
+
+      <p>
+        Production websites will serve as your example and guide to each and
+        every one of the stratgies in this guide.
+      </p>
+
+      <p>
+        Think of it as an opportunity to pair program with an experienced Rails
+        developer and work on a high-scale application.
+      </p>
+
+      <h4>Easy-to-follow, even for bloated legacy apps</h4>
+
+      <p>
+        You’ll see the before and after, comparing the impact of each strategy
+        through actual production metrics. It’s broken down into simple,
+        step-by-step processes that cover every layer of a Rails application’s
+        stack.
+      </p>
+
+      <p>
+        At the end of each lesson is a simple checklist so you can implement
+        what you’ve learned. There’s no guesswork. Just follow the plan, and your
+        performance analytics will start sloping down and to the right.
+      </p>
+
+      <p class="text-center">
+        <img src="https://i.imgur.com/6MnUrju.png"></img>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="blue-box padding-y-lg">
+  <div class="container">
+    <div class="row">
+      <div class="column">
+        <h2>What does this course cover?</h2>
+      </div>
+    </div>
+
+    <div class="row text-center">
+      <div class="column column-70 column-offset-15">
+        <p>
+          The entire Complete Guide to Rails Performance — all strategies, checklists
+          and screencasts — are broken into four modules to ensure that you don’t get
+          overwhelmed and can easily and methodically chip away at your Rails
+          application’s performance.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="icon-list">
+  <div class="container">
+    <div class="row row-wrap">
+      <div class="column column-20 text-center">
+        <img height="100" src="img/Profiling.png"></img>
+      </div>
+      <div class="column column-30 icon-list-item">
+        <h4>Profiling &amp; Benchmarking</h4>
+        <p>
+          How to identify what areas are causing bottlenecks. Don’t waste your
+          time by “spraying and praying”, optimizing every thing on your site.
+          Learn how to identify what areas account for 80% of the slowdown.
+        </p>
+      </div>
+      <div class="column column-20 text-center">
+        <img height="100" src="img/Frontend.png"></img>
+      </div>
+      <div class="column column-30 icon-list-item">
+        <h4>Frontend</h4>
+        <p>
+          I cover all the performance problems you can encounter in JavaScript,
+          HTML, and CSS. In addition, we’ll deep dive on HTTP and how the
+          browser works, so that you can reduce your frontend load times by more than 80%.
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column column-20 text-center">
+        <img height="100" src="img/Backend.png"></img>
+      </div>
+      <div class="column column-30 icon-list-item">
+        <h4>Backend</h4>
+        <p>
+          We'll discuss everything in the Ruby and Rails world that can make your application slow.
+          What gems to use, which to avoid, and how to write Ruby that's zippy quick.
+          You'll learn about how Rails works while avoiding the common pitfalls
+          that make Rails apps slow.
+      </div>
+      <div class="column column-20 text-center">
+        <img height="100" src="img/Environment.png"></img>
+      </div>
+      <div class="column column-30 icon-list-item">
+        <h4>Environment</h4>
+        <p>
+          This is truly a full-stack book - we'll discuss asset delivery, CDNs,
+          DNS, server hardware and more.
+      </div>
+    </div>
+
+    <div class="row margin-sm">
+      <div class="column text-center">
+        <b>This course mostly covers the "average" Rails application stack</b>, though
+        there are specific strategies and lessons on JRuby and alternative
+        memory allocators. We'll discuss when it is and when it isn't appropriate
+        to leave the "golden path".
+      </div>
+    </div>
+
+
+    <div class="row row-wrap">
+      <div class="column column-33">
+        <h3 class="red-underline text-upcase">10 more things you'll learn in this course:</h3>
+      </div>
+      <div class="column column-33 text-small">
+        <p>
+          Will JRuby (or Opal or Rubinius) make my application faster?
+        </p>
+        <p>
+          Which application server (Unicorn, Puma, Passenger, etc.) is best for my application?
+        </p>
+        <p>
+          How can I make sure I'm not over-scaled and running on too many servers?
+        </p>
+        <p>
+          How can I debug a slow ActiveRecord query?
+        </p>
+        <p>
+          What special areas do I need to look for as my application scales?
+        </p>
+      </div>
+      <div class="column column-33 text-small">
+        <p>
+          What cache backend should I choose?
+        </p>
+        <p>
+          How can I track down and fix a memory leak?
+        </p>
+        <p>
+          How can I use Turbolinks without breaking Google Analytics or any of my
+          other JavaScript?
+        </p>
+        <p>
+          How do I make my Rails application as fast as a Sinatra app?
+        </p>
+        <p>
+          What's the optimal order of elements in the head tag?
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="column">
+      <h2>Class Details: Here's what you'll get</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="column text-center">
+      <img src="img/cover-md.jpg" height="300">
+    </div>
+  </div>
+</div>
+
+<div class="grey-box padding-lg">
+  <div class="container">
+    <div class="row text-center">
+      <div class="column column-70 column-offset-15">
+        <p class="text-large margin-none">
+          The Complete Guide to Rails Performance course is available online.<br>
+          <b>Here is what your course will include:</b>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container padding-y-xl">
+  <div class="row row-wrap">
+    <div class="column column-50 margin-sm">
+      <div class="visible-flex">
+        <span class="padding-x-md"><img src="img/icon_lessons.png"></img></span>
+        <span>4 modules with <b>over 30 lessons</b> covering <b>300+ pages of content</b></span>
+      </div>
+    </div>
+    <div class="column column-50 margin-sm">
+      <div class="visible-flex">
+        <span class="padding-x-md"><img src="img/icon_steps.png"></img></span>
+        <span>Meticulous <b>step-by-step instruction</b> for every strategy you learn</span>
+      </div>
+    </div>
+    <div class="column column-50 margin-sm">
+      <div class="visible-flex">
+        <span class="padding-x-md"><img src="img/icon_qa.png"></img></span>
+        <span>6 live video <b>Q&amp;A</b> sessions. If I was a dork, I'd call them webinars.</span>
+      </div>
+    </div>
+    <div class="column column-50 margin-sm">
+      <div class="visible-flex">
+        <span class="padding-x-md"><img src="img/icon_screencasts.png"></img></span>
+        <span>Over <b>30 screencasts</b>, totalling nearly 15 hours of extra content not covered by the lessons.</span>
+      </div>
+    </div>
+    <div class="column column-50 margin-sm">
+      <div class="visible-flex">
+        <span class="padding-x-md"><img src="img/icon_slack.png"></img></span>
+        <span>A <b>private Slack channel</b> with the author and your fellow course participants.</span>
+      </div>
+    </div>
+    <div class="column column-50 margin-sm">
+      <div class="visible-flex">
+        <span class="padding-x-md"><img src="img/icon_interview.png"></img></span>
+        <span>An <b>interview series</b> with accomplished Rubyists.</span>
+      </div>
+    </div>
+    <div class="column column-50 margin-sm">
+      <div class="visible-flex">
+        <span class="padding-x-md"><img src="img/icon_kindle.png"></img></span>
+        <span><b>PDF/Kindle/EPUB/Mobi</b> versions for reading on the go.</span>
+      </div>
+    </div>
+    <div class="column column-50 margin-sm">
+      <div class="visible-flex">
+        <span class="padding-x-md"><img src="img/icon_audiobook.png"></img></span>
+        <span><b>Audiobook</b> versions of all written content.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="pull-quote">
+  <div class="container">
+    <div class="row">
+      <div class="column">
+        How will you read it? Immediately after purchasing, you'll be sent a private
+        link where you can jump in and start the course immediately. You could literally
+        be watching the first workshop 5 minutes from now.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="grey-box padding-y-xl">
+  <div class="container">
+    <div class="row text-center">
+      <div class="column column-70 column-offset-15">
+        <h2>How much does it cost?</h2>
+
+        <p>
+          The entire Complete Guide to Rails Performance — all strategies,
+          checklists and screencasts — are broken into four modules to ensure
+          that you don’t get overwhelmed and can easily and methodically chip
+          away at your Rails application’s performance.
+        </p>
+      </div>
+    </div>
+    <div class="row pricing-boxes margin-sm">
+      <div class="column">
+        <div class="white-box">
+          <div class="row">
+            <div class="column col-center">
+              <div class="text-center">
+                <h4>Web-Scale Package</h4>
+
+                <h4 class="price">$199</h4>
+                <p class="mute sans-serif">one flat payment</p>
+              </div>
+            </div>
+            <div class="column">
+              <p>The complete and unabridged 300+ page Complete Guide to Rails Performance with all 30+ lessons, checklists and strategies.</p>
+
+              <p>Access to the private community of your fellow course participants.</p>
+
+              <p>Dozens of hours of video screencasts, where you get to look over my shoulder as I work</p>
+
+              <p>Audiobook versions of all written content</p>
+
+              <div class="text-center">
+                <button>Purchase</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row pricing-boxes margin-sm">
+      <div class="column">
+        <div class="white-box">
+          <div class="row">
+            <div class="column col-center">
+              <div class="text-center">
+                <h4>Corporate Package</h4>
+
+                <h4 class="price">Custom</h4>
+                <p class="mute sans-serif">ask for details</p>
+              </div>
+            </div>
+            <div class="column">
+              <p>A corporate license for the complete and unabridged Complete Guide to Rails Performance, providing access for your entire team. <b>No per-seat rigmarole.</b></p>
+
+              <p>Access to the private community of your fellow course participants.</p>
+
+              <p>Dozens of hours of video and audio content</p>
+
+              <p>Private Q&amp;A session with me and your team.</p>
+
+              <p>1-Day Performance Workshop where I pair with your team on your application.</p>
+
+              <div class="text-center">
+                <button>Purchase</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column column-50 column-offset-25">
+        <div class="yellow-box text-center padding-md">
+          <h4>100% Satisfaction Guaranteed</h4>
+          <p>
+            If you do what I show you and don't get results, I will give you 100% of your money back.
+            If you're not completely satisfied, I don't want your money.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="blue-box padding-y-xl">
+  <div class="container">
+    <div class="row">
+      <div class="column">
+        <h2>Frequently Asked Questions</h2>
+      </div>
+    </div>
+
+    <div class="row margin-md">
+      <div class="column column-70 column-offset-15">
+        <div class="white-box padding-md">
+          <h4>Is there anyone I can reach out during the course if I have questions about my site in particular?</h4>
+          <p>
+            Yes. All course participants receive access to a private Slack
+            channel where you can discuss problems and solutions. I'll be sitting
+            in that channel all day. I do not have a day job - making your site
+            faster is my job.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row margin-md">
+      <div class="column column-70 column-offset-15">
+        <div class="white-box padding-md">
+          <h4>Will this course continue to be updated? And will I get free access to future versions?</h4>
+          <p>
+            Yes. The software world changes quickly. Any changes to the course
+            are free to you forever - you will never be asked to upgrade or buy
+            "version two" or buy again when Rails 8 comes out.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row margin-md">
+      <div class="column column-70 column-offset-15">
+        <div class="white-box padding-md">
+          <h4>How much more is in the course vs. what you already put out on your blog?</h4>
+          <p>
+            About 25% of the material in the course is broadly covered by my blog. However, even for material that I've covered on the blog already, this course goes much further in depth and expands on those posts.
+
+            Think of my blog as the introduction. This course is the college class.
+
+            All videos, checklists and screencasts are all-new material.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row margin-md">
+      <div class="column column-70 column-offset-15">
+        <div class="white-box padding-md">
+          <h4>Do I need to be an advanced Rails programmer or Rubyist to understand this course?</h4>
+          <p>
+            No. This course assumes about 3 months of Rails experience, no more.
+            I hate technical writing that assumes the reader is some kind of
+            genius and doesn't explain (or even just link to an explanation)
+            everything that's going on.
+
+            In addition, even if you're not *completely* sure you've understood
+            a topic, you can ask me and your fellow participants on our private
+            Slack channel.
+
+            Finally, if you buy the course and decide its over your head, I'll
+            refund your money. No questions asked.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row margin-md">
+      <div class="column column-70 column-offset-15">
+        <div class="white-box padding-md">
+          <h4>I can't afford this course!</h4>
+          <p>
+            Think about it this way - can your business (or the business you work for) afford to be slow? Can you afford users quitting when they get frustrated with your site's speed?
+
+            In 5 years, will you wish your site was slower? No. You'll wish it was faster.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row margin-md">
+      <div class="column column-70 column-offset-15">
+        <div class="white-box padding-md">
+          <h4>Does this course apply to my small site? I only get 10 requests per minute.</h4>
+          <p>
+            If you (or your customers) are not satisfied with the speed of your
+            Rails application, this course will work for you. Not 100% will apply,
+            of course, but 90% of it will.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row margin-md">
+      <div class="column column-70 column-offset-15">
+        <div class="white-box padding-md">
+          <h4>What stack will be covered? What about frontend JS frameworks?</h4>
+          <p>
+            I'm going to focus the course on the typical Rails stack. IMO, that
+            includes a SQL relational database. NoSQL is too far outside of my
+            comfort area to speak meaningfully about it. If a lot of people ask
+            me for it, maybe I can bring in an outside expert for that or
+            something. I include a specific section on Postgres, because
+            it has several unique features and it's so widely used. JS frameworks
+            - not specifically (I won't tell you how to optimize React,
+            for example), but I will cover the specific needs of an API-only
+            application.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row margin-md">
+      <div class="column column-70 column-offset-15">
+        <div class="white-box padding-md">
+          <h4>Is this course appropriate for legacy applications?</h4>
+          <p>
+            I've worked on a lot of what I consider "legacy" applications
+            (2+ year codebases). Those are the ones that tend to be slow,
+            not the greenfield ones, so I'd say this course *focuses* on legacy
+            applications. My only caveat is I'm not going to talk about
+            optimizing previous major versions of anything - Rails 3, Ruby
+            1.9, etc.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="grey-box padding-y-xl">
+  <div class="container">
+    <div class="row text-center">
+      <div class="column column-70 column-offset-15">
+        <h2>Make your Rails app faster today</h2>
+      </div>
+    </div>
+    <div class="row pricing-boxes margin-sm">
+      <div class="column">
+        <div class="white-box">
+          <div class="row">
+            <div class="column col-center">
+              <div class="text-center">
+                <h4>Web-Scale Package</h4>
+
+                <h4 class="price">$199</h4>
+                <p class="mute sans-serif">one flat payment</p>
+              </div>
+            </div>
+            <div class="column">
+              <p>The complete and unabridged 300+ page Complete Guide to Rails Performance with all 30+ lessons, checklists and strategies.</p>
+
+              <p>Access to the private community of your fellow course participants.</p>
+
+              <p>Dozens of hours of video screencasts, where you get to look over my shoulder as I work</p>
+
+              <p>Audiobook versions of all written content</p>
+
+              <div class="text-center">
+                <button>Purchase</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row pricing-boxes margin-sm">
+      <div class="column">
+        <div class="white-box">
+          <div class="row">
+            <div class="column col-center">
+              <div class="text-center">
+                <h4>Corporate Package</h4>
+
+                <h4 class="price">Custom</h4>
+                <p class="mute sans-serif">ask for details</p>
+              </div>
+            </div>
+            <div class="column">
+              <p>A corporate license for the complete and unabridged Complete Guide to Rails Performance, providing access for your entire team. <b>No per-seat rigmarole.</b></p>
+
+              <p>Access to the private community of your fellow course participants.</p>
+
+              <p>Dozens of hours of video and audio content</p>
+
+              <p>Private Q&amp;A session with me and your team.</p>
+
+              <p>1-Day Performance Workshop where I pair with your team on your application.</p>
+
+              <div class="text-center">
+                <button>Purchase</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column column-50 column-offset-25">
+        <div class="yellow-box text-center padding-md">
+          <h4>100% Satisfaction Guaranteed</h4>
+          <p>
+            If you do what I show you and don't get results, I will give you 100% of your money back.
+            If you're not completely satisfied, I don't want your money.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

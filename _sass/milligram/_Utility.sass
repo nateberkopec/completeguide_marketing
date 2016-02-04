@@ -1,0 +1,43 @@
+
+// Utility
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// Float either direction
+.float-right
+	float: right
+
+.float-left
+	float: left
+
+// Clear a float with .clearfix
+.clearfix
+	*zoom: 1
+
+	&:after,
+	&:before
+		content: ''
+		display: table
+
+	&:after
+		clear: both
+
+.visible-sm
+	display: none !important
+
+.visible-md
+	display: none !important
+
+.visible-lg
+	display: none !important
+
+@media (max-width: 40.0rem)
+	.visible-sm
+		display: block !important
+
+@media (min-width: 40.0rem)
+	.visible-md
+		display: block !important
+
+@media (min-width: 80.0rem)
+	.visible-lg
+		display: block !important
