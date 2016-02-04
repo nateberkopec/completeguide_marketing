@@ -19,3 +19,25 @@ github_username: nateberkopec
 
 # Build settings
 markdown: kramdown
+
+gems:
+  - jekyll-assets
+
+assets:
+  js_compressor:  uglifier
+  css_compressor: sass
+  prefix: "/assets"
+  assets:
+    - "*.png"
+    - "*.jpg"
+    - "main.css"
+    - "*.gif"
+    - "*.webm"
+    - "*.mp4"
+  digest: true
+  sources:
+    - "assets"
+    - "assets/css"
+    - "assets/img"
+    - "assets/js"
+    - "_sass"
