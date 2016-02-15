@@ -4,12 +4,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta property="og:type" content="books.book" />
-  <meta property="og:image" content="{{ page.url 'assets/img/cover-md.jpg' | prepend: site.url }}" />
+  <meta property="og:image" content="{{ 'assets/img/cover-md.jpg' | prepend: site.url }}" />
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:creator" content="@nateberkopec">
   <meta name="twitter:title" content="The Complete Guide to Rails Performance">
   <meta name="twitter:description" content="{{ site.description }}">
-  <meta name="twitter:image" content="{{ page.url 'assets/img/cover-md.jpg' | prepend: site.url }}">
+  <meta name="twitter:image" content="{{'assets/img/cover-md.jpg' | prepend: site.url }}">
 
   <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
