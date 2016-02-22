@@ -27,9 +27,9 @@ layout: default
         </p>
 
         <p class="text-large">
-          The Complete Guide to Rails Performance is a full-stack course that teaches you how to make Ruby
+          The Complete Guide to Rails Performance is a full-stack course gives you the tools to make Ruby
           on Rails applications
-          <b>faster</b>, more <b>scalable</b>, and <b>easier to maintain</b>.
+          <b>faster</b>, more <b>scalable</b>, and <b>simpler to maintain</b>.
         </p>
       </div>
       <div class="column column-40 text-center visible-md visible-lg">
@@ -45,13 +45,13 @@ layout: default
       <h3 class="red-underline">Performance is hard.</h3>
 
       <div class="meta-p">
-        <h4>Why are some (even most) production Rails applications extremely slow?</h4>
+        <h4>Why are most production Rails applications extremely slow?</h4>
         <p>They didn't start that way. Your app started as a lean, mean web machine.</p>
       </div>
 
       <div class="meta-p">
         <h4>When did pages start taking 5 seconds to load?</h4>
-        <p>Searches bog down, your caches are bursting at the seams, and your server is constantly out of memory.</p>
+        <p>Searches bog down, your caches are bursting at the seams, and your server is constantly out of memory. 5 seconds is a lifetime.</p>
       </div>
     </div>
     <div class="column column-30 col-center">
@@ -66,13 +66,12 @@ layout: default
       <div class="meta-p">
         <h4>Where did it all go wrong?</h4>
         <p>
-          Hacker News will tell you it's because Ruby is fatally flawed.
+          Hacker News says it's because Ruby is fatally flawed.
           It's a slow language, doomed to failure in a land of Go, Javascript, Erlang and others.
           That’s BS.
         </p>
         <p>
-          Look at Shopify, Github and Basecamp - all Rails applications in the top
-          1000 in the world, according to Alexa. <b>How do these Rails applications
+          Look at Shopify, Github and Basecamp - all Rails applications and some of the most popular websites in the world. <b>How do these Rails applications
           achieve sub-100 millisecond response times</b> at massive (dare I say, Web™) Scale?
         </p>
       </div>
@@ -102,7 +101,7 @@ layout: default
 <div class="pull-quote">
   <div class="container">
     Almost every Rails application suffers from the same performance problems.
-    This guide is about identifying and solving those problems.
+    This course will show you the tips and tricks that will give you the speeding bullet of a website that your customers demand.
   </div>
 </div>
 
@@ -112,20 +111,22 @@ layout: default
       <h2>Introducing:<br> The Complete Guide to Rails Performance</h2>
 
       <p>
-        My name is Nate Berkopec. I'm a Rails developer.
+        My name is Nate Berkopec. I'm a Rails developer and a speed freak.
       </p>
 
       <p>
-        Over the past 4 years, I've seen dozens of different Rails codebases. Many were for well-funded startups, from Ivy-League incubators like YCombinator or 500Startups. Others were the passion projects of developers looking to start a side business.
+        Over the past 4 years, I've seen dozens of different Rails codebases.
+        Many were for well-funded startups, from Ivy-League incubators like YCombinator or 500Startups.
+        Others were the passion projects of developers looking to start a side business.
       </p>
 
       <p>
-        But I've never met a Rails application that couldn't be faster.
+        But I've never met a Rails application I couldn't make faster.
       </p>
 
-      <h4>What do I consider fast?</h4>
+      <h4>What is fast?</h4>
 
-      <p>What do I consider to be a "fast" Rails application? Here's some numbers.</p>
+      <p>Here's the numbers.</p>
 
       <table>
         <tr>
@@ -147,9 +148,9 @@ layout: default
       </table>
 
       <p>
-        Of course, those numbers are just rules of thumb for Rails applications
+        Those numbers are the standard for Rails applications
         that serve up HTML - your typical "Basecamp-style" application.
-        For simple API servers that serve JSON only, I might divide by 2, for example.
+        For simple API servers that serve JSON only, I divide by 2.
       </p>
 
       <p>And for the frontend, here's what I'd expect to see:</p>
@@ -174,22 +175,25 @@ layout: default
       </table>
 
       <p>
-        These are the numbers I'd expect to see in Google Analytic's Site Speed
-        Tool or New Relic's Browser analytics. This is *not* the load times I'd
+        These are the numbers I'd expect to see in Google Analytics Site Speed
+        Tool or New Relic's Browser analytics. This is not the load times I'd
         expect from checking your site load in your local browser - most people's
         machines and internet connections are slower than your average developer's!
       </p>
 
       <p>
-        If you're in the "GOOD" region of these numbers, well, congrats - this
+        If you're in the "FAST" region of these numbers, well, congrats - this
         course won't help you. But if you're in the "AVERAGE" to "BAD" group,
-        well, then I think have some things I can teach you.
+        well, then I can help.
       </p>
 
       <h4>Performance is hard. Let me help you.</h4>
 
       <p>
-        Performance isn't easy. Delivering an HTML response to the browser actually involves hundreds of technologies and levels of the stack.
+        Performance isn't easy. Delivering an HTML response to the browser
+        actually involves hundreds of technologies and levels of the stack.
+        <b>Constructing a fast website is a bit like constructing a house of cards -
+          a problem anywhere in the stack can cause it all to collapse.</b>
       </p>
 
       <p>
@@ -218,17 +222,17 @@ layout: default
         <div class="column column-50">
           <div class="icon-list-item">
             <h4>Server</h4>
-            <span>Ever considered how your memory allocator may be affecting your performance?</span>
+            <span>Do you know how your memory allocator may be affecting your performance?</span>
           </div>
         </div>
       </div>
 
       <p>
-        This makes performance optimization something like looking for a needle in a haystack - any one of a thousand things could be the bottleneck for your application. Where do you even start?
+        Performance optimization is like looking for a needle in a haystack - any one of a thousand things could be the bottleneck for your application. Where do you even start?
       </p>
 
       <p>
-        Worse, no full-stack developer that has to write code for a living can keep on top of all of these developments at once. No one has ever written a guide for optimizing Rails applications that covers the entire stack.
+        Worse, no full-stack developer who writes code for a living can keep on top of all of these developments at once. My guide for optimizing Rails applications covers the entire stack.
       </p>
 
       <p>
@@ -236,12 +240,12 @@ layout: default
       </p>
 
       <p>
-        That's exactly what I've done.
+        Here's your chance.
       </p>
 
       <h2 class="margin-md">WATCH ME OPTIMIZE PRODUCTION RAILS APPS AND APPLY THE LESSONS BACK TO YOUR OWN SITE.</h2>
 
-      <p>I’ve created what is basically an enormous checklist for speeding up Rails applications:</p>
+      <p>I’ve created what an exhaustive checklist for speeding up Rails applications:</p>
 
       <ul>
         <li><b>Implemented 34 strategies</b> that have been tested by more than 1 million unique visitors.</li>
@@ -250,7 +254,7 @@ layout: default
       </ul>
 
       <p>
-        These strategies have been tested and proven. But not just on my client’s sites.
+        These strategies have been tested and proven on my client’s sites and others.
       </p>
 
       <p>
@@ -262,17 +266,17 @@ layout: default
       <h4>Look over my shoulder while I work</h4>
 
       <p>
-        You’ll get to watch, through screencasts and video lessons, exacty how
+        You’ll get to watch, through screencasts and video lessons, exactly how
         (and more importantly, why) I optimized these real-world production websites.
       </p>
 
       <p>
         <b>Production websites will serve as your example</b> and guide to each and
-        every one of the stratgies in this guide.
+        every one of the strategies in this guide.
       </p>
 
       <p>
-        Think of it as an opportunity to pair program with an experienced Rails
+        This is an opportunity to pair program with an experienced Rails
         developer and work on a high-scale application.
       </p>
 
@@ -286,7 +290,7 @@ layout: default
       </p>
 
       <p>
-        <b>At the end of each lesson is a simple checklist</b> so you can implement
+        <b>At the end of each lesson is a simple checklist</b> you can implement
         what you’ve learned. There’s no guesswork. Just follow the plan, and your
         performance analytics will start sloping down and to the right.
       </p>
@@ -311,7 +315,7 @@ layout: default
         <p>
           The entire Complete Guide to Rails Performance — all strategies, checklists
           and screencasts — are broken into four modules to ensure that you don’t get
-          overwhelmed and can easily and methodically chip away at your Rails
+          overwhelmed. You'll easily and methodically chip away at your Rails
           application’s performance.
         </p>
       </div>
@@ -328,8 +332,8 @@ layout: default
       <div class="column column-30 icon-list-item">
         <h4>Profiling &amp; Benchmarking</h4>
         <p>
-          How to identify what areas are causing bottlenecks. Don’t waste your
-          time by “spraying and praying”, optimizing every thing on your site.
+          Learn how to identify what areas are causing bottlenecks. Don’t waste
+          time “spraying and praying”, optimizing every thing on your site.
           Learn how to identify what areas account for 80% of the slowdown.
         </p>
       </div>
@@ -340,7 +344,7 @@ layout: default
         <h4>Frontend</h4>
         <p>
           I cover all the performance problems you can encounter in JavaScript,
-          HTML, and CSS. In addition, we’ll deep dive on HTTP and how the
+          HTML, and CSS. In addition, I’ll deep dive on HTTP and how the
           browser works, so that you can reduce your frontend load times by more than 80%.
         </p>
       </div>
@@ -363,14 +367,14 @@ layout: default
       <div class="column column-30 icon-list-item">
         <h4>Environment</h4>
         <p>
-          This is truly a full-stack book - we'll discuss asset delivery, CDNs,
+          This is truly a full-stack book - I'll discuss asset delivery, CDNs,
           DNS, server hardware and more.
       </div>
     </div>
 
     <div class="row margin-sm">
       <div class="column text-center">
-        <b>This course mostly covers the "average" Rails application stack</b>, though
+        <b>This course covers the "average" Rails application stack</b>, though
         there are specific strategies and lessons on JRuby and alternative
         memory allocators. We'll discuss when it is and when it isn't appropriate
         to leave the "golden path".
@@ -457,7 +461,7 @@ layout: default
     <div class="column column-50 margin-sm">
       <div class="visible-flex">
         <span class="padding-x-md">{% image "img/icon_screencasts.png" %}</span>
-        <span>Over <b>30 screencasts</b>, totalling nearly 15 hours of extra content not covered by the lessons.</span>
+        <span>Over <b>30 screencasts</b>, totaling nearly 15 hours of content not covered by the lessons.</span>
       </div>
     </div>
     <div class="column column-50 margin-sm">
@@ -626,7 +630,7 @@ layout: default
           <p>
             Yes. All course participants receive access to a private Slack
             channel where you can discuss problems and solutions. I'll be sitting
-            in that channel all day. I do not have a day job - making your site
+            in that channel all day. Making your site
             faster is my job.
           </p>
         </div>
@@ -700,9 +704,9 @@ layout: default
         <div class="white-box padding-md">
           <h4>Does this course apply to my small site? I only get 10 requests per minute.</h4>
           <p>
+            Customers demand speed - they won't wait around for you to figure out.
             If you (or your customers) are not satisfied with the speed of your
-            Rails application, this course will work for you. Not 100% will apply,
-            of course, but 90% of it will.
+            Rails application, this course will work for you.
           </p>
         </div>
       </div>
@@ -713,13 +717,10 @@ layout: default
         <div class="white-box padding-md">
           <h4>What stack will be covered? What about frontend JS frameworks?</h4>
           <p>
-            I'm going to focus the course on the typical Rails stack. IMO, that
-            includes a SQL relational database. NoSQL is too far outside of my
-            comfort area to speak meaningfully about it. If a lot of people ask
-            me for it, maybe I can bring in an outside expert for that or
-            something. I include a specific section on Postgres, because
+            This course focuses on the typical Rails stack. In my opinion, that
+            includes a SQL relational database. I include a specific section on Postgres, because
             it has several unique features and it's so widely used. JS frameworks
-            - not specifically (I won't tell you how to optimize React,
+            are not covered (I won't tell you how to optimize React,
             for example), but I will cover the specific needs of an API-only
             application.
           </p>
@@ -732,12 +733,11 @@ layout: default
         <div class="white-box padding-md">
           <h4>Is this course appropriate for legacy applications?</h4>
           <p>
-            I've worked on a lot of what I consider "legacy" applications
-            (2+ year codebases). Those are the ones that tend to be slow,
-            not the greenfield ones, so I'd say this course *focuses* on legacy
-            applications. My only caveat is I'm not going to talk about
+            I've worked on a lot of "legacy" applications. They tend to be slow, so this course *focuses* on legacy
+            applications. However, I'm not going to talk about
             optimizing previous major versions of anything - Rails 3, Ruby
-            1.9, etc.
+            1.9, etc. As of time of writing (January 2015), this course covers
+            both Rails 4 and Rails 5.
           </p>
         </div>
       </div>
