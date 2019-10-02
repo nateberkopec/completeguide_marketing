@@ -20,7 +20,7 @@ github_username: nateberkopec
 # Build settings
 markdown: kramdown
 
-gems:
+plugins:
   - jekyll-assets
 
 assets:

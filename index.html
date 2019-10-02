@@ -1,11 +1,12 @@
 ---
 layout: default
+productName: "The Complete Guide to Rails Performance"
 ---
 
 <div class="hero blue-box" style="position:relative">
   <video autoplay loop id="bgvid">
-    <source src="{% asset_path 'video/train.webm' %}" type="video/webm">
-    <source src="{% asset_path 'video/train.mp4' %}" type="video/mp4">
+    <source src="{{ 'assets/video/train.webm' | absolute_url }}" type="video/webm">
+    <source src="{{ 'assets/video/train.mp4' | absolute_url }}" type="video/mp4">
   </video>
   <div class="container padding-y-lg" style="z-index: 1000">
     <div class="row">
@@ -16,7 +17,7 @@ layout: default
 
     <div class="row visible-sm text-center">
       <div class="column">
-        <p>{% image "img/cover-sm.jpg" %}</p>
+        <p>{% asset "img/cover-sm.jpg" %}</p>
       </div>
     </div>
 
@@ -33,7 +34,7 @@ layout: default
         </p>
       </div>
       <div class="column column-40 text-center visible-md visible-lg">
-        {% image 'img/cover-sm.jpg' %}
+        {% asset 'img/cover-sm.jpg' %}
       </div>
     </div>
   </div>
@@ -55,12 +56,12 @@ layout: default
       </div>
     </div>
     <div class="column column-30 col-center">
-      {% image "img/lost.gif" %}
+      {% asset "img/lost.gif" %}
     </div>
   </div>
   <div class="row margin-sm">
     <div class="column column-30 col-center">
-      {% image "img/thisisfine.jpg" %}
+      {% asset "img/thisisfine.jpg" %}
     </div>
     <div class="column column-70">
       <div class="meta-p">
@@ -93,7 +94,7 @@ layout: default
       </p>
     </div>
     <div class="column column-30 col-center">
-      {% image "img/pokemon.gif" %}
+      {% asset "img/pokemon.gif" %}
     </div>
   </div>
 </div>
@@ -296,7 +297,7 @@ layout: default
       </p>
 
       <p class="text-center">
-        {% image "img/newrelic.jpg" %}
+        {% asset "img/newrelic.jpg" %}
       </p>
     </div>
   </div>
@@ -327,7 +328,7 @@ layout: default
   <div class="container">
     <div class="row row-wrap">
       <div class="column column-20 text-center">
-        {% image "img/Profiling.png" %}
+        {% asset "img/Profiling.png" %}
       </div>
       <div class="column column-30 icon-list-item">
         <h4>Profiling &amp; Benchmarking</h4>
@@ -338,7 +339,7 @@ layout: default
         </p>
       </div>
       <div class="column column-20 text-center">
-        {% image "img/Frontend.png" %}
+        {% asset "img/Frontend.png" %}
       </div>
       <div class="column column-30 icon-list-item">
         <h4>Frontend</h4>
@@ -351,7 +352,7 @@ layout: default
     </div>
     <div class="row">
       <div class="column column-20 text-center">
-        {% image "img/Backend.png" %}
+        {% asset "img/Backend.png" %}
       </div>
       <div class="column column-30 icon-list-item">
         <h4>Backend</h4>
@@ -362,7 +363,7 @@ layout: default
           that make Rails apps slow.
       </div>
       <div class="column column-20 text-center">
-        {% image "img/Environment.png"  %}
+        {% asset "img/Environment.png"  %}
       </div>
       <div class="column column-30 icon-list-item">
         <h4>Environment</h4>
@@ -461,12 +462,12 @@ layout: default
       </div>
     </div>
     <div class="column column-50 col-center text-center">
-      {% image "img/cover-md.jpg" %}
+      {% asset "img/cover-md.jpg" %}
     </div>
   </div>
   <div class="row margin-sm">
     <div class="column column-50 col-center">
-      {% image "img/screencast.png" %}
+      {% asset "img/screencast.png" %}
     </div>
     <div class="column column-50">
       <h3 class="red-underline">Screencasts and Labs</h3>
@@ -501,7 +502,7 @@ layout: default
       </p>
     </div>
     <div class="column column-50 col-center">
-      {% image "img/slack.jpg" %}
+      {% asset "img/slack.jpg" %}
     </div>
   </div>
 </div>
@@ -539,7 +540,7 @@ layout: default
       </p>
     </div>
     <div class="column column-30 col-center">
-      {% image "img/nate.jpg" %}
+      {% asset "img/nate.jpg" %}
     </div>
   </div>
 </div>

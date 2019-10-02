@@ -1,0 +1,39 @@
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Product",
+  "name": "{{ page.productName }}",
+  "image": [
+   "{{ 'assets/img/cover-md.jpg' | absolute_url }}"
+  ],
+  "description": "The only guide you'll ever need to make your Ruby on Rails application faster and more scalable.",
+  "offers": {
+      "@type": "Offer",
+      "price": "99",
+      "priceCurrency": "USD",
+      "seller": {
+        "@type": "Organization",
+        "name": "Speedshop",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://speedshop.co/assets/img/speedshop_s_big.png",
+          "width": 497,
+          "height": 497
+        }
+      }
+    },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "14"
+  },
+  "brand": {
+    "@type": "Organization",
+    "name": "Speedshop"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ page.url | absolute_url }}"
+  }
+}
+</script>
