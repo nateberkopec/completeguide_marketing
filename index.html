@@ -28,9 +28,13 @@ productName: "The Complete Guide to Rails Performance"
         </p>
 
         <p class="text-large">
-          The Complete Guide to Rails Performance is a full-stack course that gives you the tools to make Ruby
+          The Complete Guide to Rails Performance is a full-stack course that gives you the tools to make your Ruby
           on Rails applications
-          <b>faster</b>, more <b>scalable</b>, and <b>simpler to maintain</b>.
+          <b>faster</b> and <b>more delightful for users</b>, <b>scale better</b> and <b>for less money</b>, and <b>take less effort to maintain</b>.
+        </p>
+
+        <p style="background: #FFF; color: #052041; text-transform: capitalize; font-variant: small-caps; text-align: center; border-radius: 5px; font-family: sans-serif; font-weight: bold">
+          3rd Edition: Updated for Rails 4.2 through Rails 6.0
         </p>
       </div>
       <div class="column column-40 text-center visible-md visible-lg">
@@ -46,13 +50,13 @@ productName: "The Complete Guide to Rails Performance"
       <h3 class="red-underline">Performance is hard.</h3>
 
       <div class="meta-p">
-        <h4>Why are most production Rails applications extremely slow?</h4>
-        <p>They didn't start that way. Your app started as a lean, mean web machine.</p>
+        <h4>Why is your Rails application slow?</h4>
+        <p>It didn't start that way. Your app started as a lean, mean web machine. Customers are complaining. The Redis server is on fire, and the database ran out of memory last week.</p>
       </div>
 
       <div class="meta-p">
-        <h4>When did pages start taking 5 seconds to load?</h4>
-        <p>Searches bog down, your caches are bursting at the seams, and your server is constantly out of memory. 5 seconds is a lifetime.</p>
+        <h4>When did your pages start taking 5 seconds to load?</h4>
+        <p>Searches bog down, your caches are bursting at the seams, and your server is constantly out of memory. 5 seconds is a lifetime. You're spending thousands per month on servers and you don't know why.</p>
       </div>
     </div>
     <div class="column column-30 col-center">
@@ -65,7 +69,7 @@ productName: "The Complete Guide to Rails Performance"
     </div>
     <div class="column column-70">
       <div class="meta-p">
-        <h4>Where did it all go wrong?</h4>
+        <h4>Rewrites are expensive. Optimization is cheap.</h4>
         <p>
           Hacker News says it's because Ruby is fatally flawed.
           It's a slow language, doomed to fail in a land of Go, Javascript, Erlang and others.
@@ -73,7 +77,7 @@ productName: "The Complete Guide to Rails Performance"
         </p>
         <p>
           Look at Shopify, Github and Basecamp. They're all Rails applications and some of the most popular websites in the world. <b>How do these Rails applications
-          achieve sub-100 millisecond response times</b> at massive (dare I say, Web™) Scale?
+          achieve sub-100 millisecond response times</b> at massive (dare I say, Web™) Scale? What if I told you it wasn't even that hard?
         </p>
       </div>
     </div>
@@ -83,7 +87,7 @@ productName: "The Complete Guide to Rails Performance"
     <div class="column column-70">
       <h4>Why is this so difficult? Is DHH sacrificing chickens in his backyard?</h4>
       <p>
-        The secret is that Rails apps aren't slow by default - they die a slow
+        The secret is that Rails apps aren't slow or hard to scale by default - they die a slow
         death by a thousand papercuts. This course is about each one of those thousand papercuts.
       </p>
       <p>
@@ -101,7 +105,7 @@ productName: "The Complete Guide to Rails Performance"
 
 <div class="pull-quote">
   <div class="container">
-    Almost every Rails application suffers from the same performance problems.
+    Almost every Rails application suffers from the same performance and scaling problems.
     This course will show you the techniques that will give you the speeding bullet of a website that your customers demand.
   </div>
 </div>
@@ -112,81 +116,32 @@ productName: "The Complete Guide to Rails Performance"
       <h2>Introducing:<br> The Complete Guide to Rails Performance</h2>
 
       <p>
-        My name is Nate Berkopec. I'm a Rails developer and a speed freak.
+        My name is Nate Berkopec. I'm a Rails developer and a speed freak. I also maintain Puma - my code is probably already running on your servers, today.
       </p>
 
       <p>
-        Over the past 4 years, I've seen dozens of different Rails codebases.
+        Over the past 10 years, I've seen dozens of different Rails codebases.
         Many were for well-funded startups, from Ivy-League incubators like YCombinator or 500Startups.
         Others were the passion projects of developers looking to start a side business.
+      </p>
+
+      <p>
+        I've consulted for dozens of clients on making their Rails apps faster, and taught hundreds at workshops.
       </p>
 
       <p>
         But I've never met a Rails application I couldn't make faster.
       </p>
 
-      <h4>What is fast?</h4>
+      <h4>A slow app is expensive</h4>
 
-      <p>Here are the numbers.</p>
+      <p>Did you know that an extra second of load time reduces revenue by 5 to 10%? This result has been experimentally verified at dozens of companies large and small.</p>
 
-      <table>
-        <tr>
-          <th>App server average response time</th>
-          <th>Status</th>
-        </tr>
-        <tr>
-          <td> < 50ms</td>
-          <td>Fast!</td>
-        </tr>
-        <tr>
-          <td> < 300ms</td>
-          <td>Average</td>
-        </tr>
-        <tr>
-          <td> >= 300ms</td>
-          <td>Slow!</td>
-        </tr>
-      </table>
+      <p>If your business is doing $1 million per year, reducing browser load times by 1 second will increase revenue by $50,000 to $100,000 per year. <b>I can show you how to make your site faster and grow your business by at least that much and more</b>.<p>
 
-      <p>
-        Those numbers are the standard for Rails applications
-        that serve up HTML - your typical "Basecamp-style" application.
-        For simple API servers that serve JSON only, I divide by 2.
-      </p>
+      <p>Did you know that most Rails applications I've seen in my consulting gigs have been spending more than 2x per month what they needed to?</p>
 
-      <p>And for the frontend, here's what I'd expect to see:</p>
-
-      <table>
-        <tr>
-          <th>Browser load time</th>
-          <th>Status</th>
-        </tr>
-        <tr>
-          <td> < 500ms</td>
-          <td>Fast!</td>
-        </tr>
-        <tr>
-          <td> < 2 seconds</td>
-          <td>Average</td>
-        </tr>
-        <tr>
-          <td> > 2 seconds</td>
-          <td>Slow!</td>
-        </tr>
-      </table>
-
-      <p>
-        These are the numbers I'd expect to see in Google Analytics Site Speed
-        Tool or New Relic's Browser analytics. These are not the load times I'd
-        expect from checking your site load in your local browser - most people's
-        machines and internet connections are slower than your average developer's!
-      </p>
-
-      <p>
-        If you're in the "FAST" region of these numbers, well, congrats - this
-        course won't help you. But if you're in the "AVERAGE" to "BAD" group,
-        well, then I can help.
-      </p>
+      <p>Most Rails applications should be spending thousands of dollars per month less than they are now. I'll show you how to audit and fix your server spending.</p>
 
       <h4>Performance is hard. Let me help you.</h4>
 
@@ -277,8 +232,8 @@ productName: "The Complete Guide to Rails Performance"
       </p>
 
       <p>
-        This is an opportunity to pair program with an experienced Rails
-        developer and work on a high-scale application.
+        This is an opportunity to virtually pair program with an experienced Rails
+        developer (me!) and work on a high-scale application.
       </p>
 
       <h4>Easy-to-follow, even for bloated legacy apps</h4>
@@ -317,7 +272,7 @@ productName: "The Complete Guide to Rails Performance"
           The entire Complete Guide to Rails Performance — all strategies, checklists
           and screencasts — are broken into four modules to ensure that you don’t get
           overwhelmed. You'll easily and methodically chip away at your Rails
-          application’s performance.
+          application’s performance. The course applies to Rails 4.2 through Rails 6.0.
         </p>
       </div>
     </div>
@@ -346,7 +301,7 @@ productName: "The Complete Guide to Rails Performance"
         <p>
           I cover all the performance problems you can encounter in JavaScript,
           HTML, and CSS. In addition, I’ll deep dive on HTTP and how the
-          browser works, so that you can reduce your frontend load times by more than 80%.
+          browser works, so that you will reduce your frontend load times by more than 80%.
         </p>
       </div>
     </div>
@@ -497,8 +452,8 @@ productName: "The Complete Guide to Rails Performance"
 
       <h4>Q&amp;A Sessions and an Interview series</h4>
       <p>
-        Q&amp;A Sessions with me, and a multi-part interview series with
-        accomplished Rubyists. Interviews include DHH himself, Mike Perham (Sidekiq), Sean Griffin (ActiveRecord maintainer), Richard Schneeman (Heroku), Sam Saffron (Discourse), Eileen Uchitelle (Basecamp), and Evan Phoenix (Puma).
+        Q&amp;A Sessions with me, and a multi-part interview series (video + audio) with
+        accomplished Rubyists. Interviews include DHH himself, Mike Perham (Sidekiq), Sean Griffin (Rails committer), Richard Schneeman (Heroku, Rails committer), Sam Saffron (Discourse), Eileen Uchitelle (Rails core team), Julia Evans (rbspy), Noah Gibbs (Ruby) and Evan Phoenix (Puma).
       </p>
     </div>
     <div class="column column-50 col-center">
@@ -512,7 +467,7 @@ productName: "The Complete Guide to Rails Performance"
     <div class="row">
       <div class="column">
         How will you read it? Immediately after purchasing, you'll be sent a private
-        link where you can jump in and start the course immediately. You could
+        link where you can jump in and start the course immediately. You should
         be watching the first workshop 5 minutes from now.
       </div>
     </div>
@@ -535,7 +490,7 @@ productName: "The Complete Guide to Rails Performance"
 
       <p class="meta-p">
          Nate is a contributor to several open source projects, such as Ruby on Rails and Sentry.
-         He has been a speaker at GORUCO, RubyConf,
+         He has been a speaker at RubyFuza, RubyKaigi, GORUCO, RubyConf,
          and RailsConf.
       </p>
     </div>
@@ -677,8 +632,8 @@ productName: "The Complete Guide to Rails Performance"
             I've worked on a lot of "legacy" applications. They tend to be slow, so this course *focuses* on legacy
             applications. However, I'm not going to talk about
             optimizing previous major versions of anything - Rails 3, Ruby
-            1.9, etc. As of time of writing (June 2019), this course covers
-            both Rails 4 and Rails 5.
+            1.9, etc. As of time of writing (October 2019), this course covers
+            Rails 4, Rails 5 and Rails 6.
           </p>
         </div>
       </div>
